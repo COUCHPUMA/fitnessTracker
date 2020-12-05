@@ -14,3 +14,28 @@ router.put("/api/workouts/:id", (req, res) => {
         .then(workout => res.json(workout))
         .catch(err => res.json(err));
 });
+
+router.post("/api/workouts", (req, res) => {
+    Workout.create({
+            day: Date.now()
+        })
+        .then(newWorkout => {
+            console.log("o am the cretead worrkout: ", newWorkout);
+            res.json(newWorkout);
+        })
+        .catch(err => res.json(err));
+});
+
+router.get("/api/workouts/range", (req, res) => {
+    Workout.find({})
+        .then(workouts => {
+            res.json(workouts);
+        })
+        .catch(err => res.json(err));
+});
+
+router.delete("/api/workouts", (req, res) => {
+
+});
+
+module.exports = router;
