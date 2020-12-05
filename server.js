@@ -22,7 +22,7 @@ const collections = ["workouts"];
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workout', {
+    process.env.MONGODB_URI || 'mongodb+srv://master:master!@cluster0.jr2zh.mongodb.net/fitnesstracker?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
